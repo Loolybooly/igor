@@ -1,1 +1,104 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Don't touch my links</title>
+        <style>
+            body {
+                background: #0d0d0d;
+                color: #f0f0f0;
+                font-family: "Inter", system-ui, sans-serif;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                margin: 0;
+            }
 
+            h1 {
+                font-size: 2rem;
+                margin-bottom: 2rem;
+                color: #fff;
+                letter-spacing: 1px;
+            }
+
+            .links {
+                display: flex;
+                flex-direction: column;
+                gap: 0.8rem;
+                width: 260px;
+            }
+
+            .link {
+                background: #1a1a1a;
+                border: 1px solid #2a2a2a;
+                border-radius: 8px;
+                padding: 0.9rem 1rem;
+                text-align: center;
+                cursor: pointer;
+                transition: all 0.2s ease;
+            }
+
+            .link:hover {
+                background: #242424;
+                border-color: #3a3a3a;
+                transform: translateY(-2px);
+            }
+
+            footer {
+                position: fixed;
+                bottom: 15px;
+                font-size: 0.8rem;
+                opacity: 0.5;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Linkies</h1>
+
+        <div class="links">
+            <div class="link" data-url="https://github.com/Loolybooly">
+                My Github profile
+            </div>
+            <div class="link" data-url="https://fondle-gayballs.vercel.app">
+                Better than Google balls (googleballs.com)
+            </div>
+            <div class="link" data-url="https://butteryclicks.vercel.app">
+                Better than other CPS tests (specifically cpstest.org)
+            </div>
+            <div
+                class="link"
+                data-url="https://discord.com/users/1236215647310975016"
+            >
+                Discord profile
+            </div>
+            <div class="link" data-url="https://x.com/LoolyTunes">
+                Twitter profile (IM NOT CALLING IT X)
+            </div>
+            <div
+                class="link"
+                data-url="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+            >
+                Stick bug
+            </div>
+            <div
+                class="link"
+                data-url="https://www.youtube.com/watch?v=9BalEldzE8o"
+            >
+                Rickroll
+            </div>
+        </div>
+
+        <footer>This is such a good website</footer>
+
+        <script>
+            document.querySelectorAll(".link").forEach((el) =>
+                el.addEventListener("click", () => {
+                    window.location.href = el.dataset.url;
+                }),
+            );
+        </script>
+    </body>
+</html>
