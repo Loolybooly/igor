@@ -3,10 +3,22 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:title" content="Igor links" />
+        <meta property="og:description" content="Links from Igor" />
+        <meta property="og:image" content="https://i.imgur.com/H1Ojtxl.png" />
+        <meta property="og:url" content="https://igorlinks.vercel.app" />
+        <meta property="og:type" content="website" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Don't touch my links</title>
         <style>
             body {
-                background: #0d0d0d;
+                background: radial-gradient(
+                    circle at top left,
+                    #0d0d0d,
+                    #050505,
+                    #101010
+                );
+                background-attachment: fixed;
                 color: #f0f0f0;
                 font-family: "Inter", system-ui, sans-serif;
                 display: flex;
@@ -26,12 +38,37 @@
 
             .links {
                 display: flex;
-                flex-direction: column;
-                gap: 0.8rem;
-                width: 260px;
+                flex-wrap: wrap;
+                gap: 2rem;
+                justify-content: center;
+                align-items: flex-start;
+                width: 90%;
+                max-width: 900px;
+            }
+
+            .category {
+                position: relative;
+                background: #111;
+                border: 1px solid #2a2a2a;
+                border-radius: 14px;
+                padding: 1.2rem;
+                flex: 1 1 250px;
+                min-width: 250px;
+                max-width: 280px;
+                overflow: hidden;
+            }
+
+            .category h2 {
+                text-align: center;
+                font-size: 1.1rem;
+                margin-bottom: 1rem;
+                color: #fff;
+                letter-spacing: 1px;
+                text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
             }
 
             .link {
+                position: relative;
                 background: #1a1a1a;
                 border: 1px solid #2a2a2a;
                 border-radius: 8px;
@@ -39,6 +76,8 @@
                 text-align: center;
                 cursor: pointer;
                 transition: all 0.2s ease;
+                margin-bottom: 0.6rem;
+                overflow: hidden;
             }
 
             .link:hover {
@@ -51,7 +90,11 @@
                 position: fixed;
                 bottom: 15px;
                 font-size: 0.8rem;
-                opacity: 0.5;
+                opacity: 0.7;
+                background: rgba(255, 255, 255, 0.05);
+                padding: 0.3rem 0.8rem;
+                border-radius: 8px;
+                backdrop-filter: blur(6px);
             }
         </style>
     </head>
@@ -59,46 +102,85 @@
         <h1>Linkies</h1>
 
         <div class="links">
-            <div class="link" data-url="https://github.com/Loolybooly">
-                My Github profile
+            <div class="category">
+                <h2>Social</h2>
+                <div class="link" data-url="https://github.com/Loolybooly">
+                    Github profile
+                </div>
+                <div
+                    class="link"
+                    data-url="https://discord.com/users/1236215647310975016"
+                >
+                    Discord profile
+                </div>
+                <div class="link" data-url="https://x.com/LoolyTunes">
+                    Twitter profile (IM NOT CALLING IT X)
+                </div>
+                <div
+                    class="link"
+                    data-url="https://www.roblox.com/users/8655856380/profile"
+                >
+                    Roblox profile
+                </div>
             </div>
-            <div class="link" data-url="https://fondle-gayballs.vercel.app">
-                Better than Google balls (googleballs.com)
+
+            <div class="category">
+                <h2>Projects</h2>
+                <div class="link" data-url="https://fondle-gayballs.vercel.app">
+                    Better than Google balls (googleballs.com)
+                </div>
+                <div
+                    class="link"
+                    data-url="https://guessthepassword.vercel.app"
+                >
+                    Guess the password boiii
+                </div>
+                <div class="link" data-url="https://butteryclicks.vercel.app">
+                    Better than other CPS tests (specifically cpstest.org)
+                </div>
             </div>
-            <div class="link" data-url="https://butteryclicks.vercel.app">
-                Better than other CPS tests (specifically cpstest.org)
-            </div>
-            <div
-                class="link"
-                data-url="https://discord.com/users/1236215647310975016"
-            >
-                Discord profile
-            </div>
-            <div class="link" data-url="https://x.com/LoolyTunes">
-                Twitter profile (IM NOT CALLING IT X)
-            </div>
-            <div
-                class="link"
-                data-url="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-            >
-                Stick bug
-            </div>
-            <div
-                class="link"
-                data-url="https://www.youtube.com/watch?v=9BalEldzE8o"
-            >
-                Rickroll
+
+            <div class="category">
+                <h2>Rickrolls</h2>
+                <div
+                    class="link"
+                    data-url="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+                >
+                    Stick bug
+                </div>
+                <div
+                    class="link"
+                    data-url="https://www.youtube.com/watch?v=9BalEldzE8o"
+                >
+                    Rickroll
+                </div>
             </div>
         </div>
-
         <footer>This is such a good website</footer>
-
         <script>
             document.querySelectorAll(".link").forEach((el) =>
                 el.addEventListener("click", () => {
                     window.location.href = el.dataset.url;
                 }),
             );
+        </script>
+
+        <audio id="hoverSound" preload="auto">
+            <source
+                src="https://cdn.pixabay.com/download/audio/2025/08/04/audio_383961.mp3"
+                type="audio/mp3"
+            />
+        </audio>
+        <script>
+            const hoverSound = document.getElementById("hoverSound");
+            hoverSound.volume = 0.5;
+
+            document.querySelectorAll(".link").forEach((el) => {
+                el.addEventListener("mouseenter", () => {
+                    hoverSound.currentTime = 0;
+                    hoverSound.play();
+                });
+            });
         </script>
     </body>
 </html>
