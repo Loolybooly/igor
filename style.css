@@ -1,0 +1,144 @@
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: radial-gradient(circle at top left, #0d0d0d, #050505, #101010);
+    color: #f0f0f0;
+    font-family: "Inter", system-ui, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+h1 {
+    font-size: 2rem;
+    margin: 1rem 0;
+    color: #fff;
+    letter-spacing: 1px;
+}
+
+.links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    flex: 1;
+    gap: 1.5rem;
+    padding-bottom: 140px; /* space for buttons + footer */
+    box-sizing: border-box;
+}
+
+.category {
+    background: #111;
+    border: 1px solid #2a2a2a;
+    border-radius: 14px;
+    padding: 1rem;
+    width: 75%;
+    max-width: 850px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.category h2 {
+    font-size: 1.2rem;
+    margin: 0 0 1rem 0;
+    color: #fff;
+    letter-spacing: 1px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+    text-align: center;
+}
+
+.links-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    flex-grow: 1;
+    overflow-y: auto;
+    gap: 0.6rem;
+    width: 100%;
+}
+
+.links-container .link {
+    background: #1a1a1a;
+    border: 1px solid #2a2a2a;
+    border-radius: 8px;
+    padding: 0.9rem 1rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    width: 100%;
+    max-width: 380px;
+    flex-shrink: 0;
+}
+
+.links-container .link:hover {
+    background: #242424;
+    border-color: #3a3a3a;
+    transform: translateY(-2px);
+}
+
+.buttons {
+    position: fixed;
+    bottom: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 1rem;
+    z-index: 10;
+}
+
+.buttons button {
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    border: none;
+    background: #fff;
+    color: #000;
+    cursor: pointer;
+    transition: 0.15s;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+.buttons button.active {
+    background: #e6e6e6;
+}
+
+footer {
+    position: fixed;
+    bottom: 20px;
+    font-size: 0.8rem;
+    opacity: 0.9;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.3rem 0.8rem;
+    border-radius: 8px;
+    backdrop-filter: blur(6px);
+    cursor: pointer;
+}
+
+#categorySocials,
+#categoryProjects {
+    display: none;
+}
+
+.links.one-active .category {
+    height: calc(100vh - 200px);
+}
+
+.links.two-active {
+    justify-content: space-evenly;
+    flex-direction: column;
+}
+
+.links.two-active .category {
+    height: calc((100vh - 240px) / 2);
+}

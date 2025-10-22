@@ -1,186 +1,80 @@
 <!doctype html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:title" content="Igor links" />
-        <meta property="og:description" content="Links from Igor" />
-        <meta property="og:image" content="https://i.imgur.com/H1Ojtxl.png" />
-        <meta property="og:url" content="https://igorlinks.vercel.app" />
-        <meta property="og:type" content="website" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>Don't touch my links</title>
-        <style>
-            body {
-                background: radial-gradient(
-                    circle at top left,
-                    #0d0d0d,
-                    #050505,
-                    #101010
-                );
-                background-attachment: fixed;
-                color: #f0f0f0;
-                font-family: "Inter", system-ui, sans-serif;
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                height: 100vh;
-                margin: 0;
-            }
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta property="og:title" content="Igor links" />
+    <meta property="og:description" content="Links from Igor" />
+    <meta property="og:image" content="https://i.imgur.com/zmCwtTB.png" />
+    <meta property="og:url" content="https://igorlinks.vercel.app" />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="https://i.imgur.com/sPxq6s5.png" type="image/png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Igor links" />
+    <meta name="twitter:description" content="Links from Igor" />
+    <meta name="twitter:image" content="https://i.imgur.com/zmCwtTB.png" />
+    <meta name="twitter:url" content="https://igorlinks.vercel.app" />
+    <meta name="twitter:site" content="@LoolyTunes" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Socials and projects</title>
+</head>
+<body>
+    <div class="buttons">
+        <button id="btnSocials" class="active">Socials</button>
+        <button id="btnProjects" class="active">Projects</button>
+    </div>
 
-            h1 {
-                font-size: 2rem;
-                margin-bottom: 2rem;
-                color: #fff;
-                letter-spacing: 1px;
-            }
-
-            .links {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 2rem;
-                justify-content: center;
-                align-items: flex-start;
-                width: 90%;
-                max-width: 900px;
-            }
-
-            .category {
-                position: relative;
-                background: #111;
-                border: 1px solid #2a2a2a;
-                border-radius: 14px;
-                padding: 1.2rem;
-                flex: 1 1 250px;
-                min-width: 250px;
-                max-width: 280px;
-                overflow: hidden;
-            }
-
-            .category h2 {
-                text-align: center;
-                font-size: 1.1rem;
-                margin-bottom: 1rem;
-                color: #fff;
-                letter-spacing: 1px;
-                text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-            }
-
-            .link {
-                position: relative;
-                background: #1a1a1a;
-                border: 1px solid #2a2a2a;
-                border-radius: 8px;
-                padding: 0.9rem 1rem;
-                text-align: center;
-                cursor: pointer;
-                transition: all 0.2s ease;
-                margin-bottom: 0.6rem;
-                overflow: hidden;
-            }
-
-            .link:hover {
-                background: #242424;
-                border-color: #3a3a3a;
-                transform: translateY(-2px);
-            }
-
-            footer {
-                position: fixed;
-                bottom: 15px;
-                font-size: 0.8rem;
-                opacity: 0.7;
-                background: rgba(255, 255, 255, 0.05);
-                padding: 0.3rem 0.8rem;
-                border-radius: 8px;
-                backdrop-filter: blur(6px);
-            }
-        </style>
-    </head>
-    <body>
-        <h1>Linkies</h1>
-
-        <div class="links">
-            <div class="category">
-                <h2>Social</h2>
-                <div class="link" data-url="https://github.com/Loolybooly">
-                    Github profile
-                </div>
-                <div
-                    class="link"
-                    data-url="https://discord.com/users/1236215647310975016"
-                >
-                    Discord profile
-                </div>
-                <div class="link" data-url="https://x.com/LoolyTunes">
-                    Twitter profile (IM NOT CALLING IT X)
-                </div>
-                <div
-                    class="link"
-                    data-url="https://www.roblox.com/users/8655856380/profile"
-                >
-                    Roblox profile
-                </div>
-            </div>
-
-            <div class="category">
-                <h2>Projects</h2>
-                <div class="link" data-url="https://fondle-gayballs.vercel.app">
-                    Better than Google balls (googleballs.com)
-                </div>
-                <div
-                    class="link"
-                    data-url="https://guessthepassword.vercel.app"
-                >
-                    Guess the password boiii
-                </div>
-                <div class="link" data-url="https://butteryclicks.vercel.app">
-                    Better than other CPS tests (specifically cpstest.org)
-                </div>
-            </div>
-
-            <div class="category">
-                <h2>Rickrolls</h2>
-                <div
-                    class="link"
-                    data-url="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
-                >
-                    Stick bug
-                </div>
-                <div
-                    class="link"
-                    data-url="https://www.youtube.com/watch?v=9BalEldzE8o"
-                >
-                    Rickroll
-                </div>
+    <div class="links">
+        <div class="category" id="categorySocials">
+            <h2>Socials</h2>
+            <div class="links-container">
+                <div class="link" data-url="https://x.com/LoolyTunes">Twitter/𝕏 profile</div>
+                <div class="link" data-url="https://github.com/Loolybooly">Github profile</div>
+                <div class="link" data-url="https://discord.com/users/1236215647310975016">Discord profile</div>
+                <div class="link" data-url="https://instagram.com/loolytunesperson">Instagram profile</div>
             </div>
         </div>
-        <footer>This is such a good website</footer>
-        <script>
-            document.querySelectorAll(".link").forEach((el) =>
-                el.addEventListener("click", () => {
-                    window.location.href = el.dataset.url;
-                }),
-            );
-        </script>
 
-        <audio id="hoverSound" preload="auto">
-            <source
-                src="https://cdn.pixabay.com/download/audio/2025/08/04/audio_383961.mp3"
-                type="audio/mp3"
-            />
-        </audio>
-        <script>
-            const hoverSound = document.getElementById("hoverSound");
-            hoverSound.volume = 0.5;
+        <div class="category" id="categoryProjects">
+            <h2>Projects</h2>
+            <div class="links-container">
+                <div class="link" data-url="https://degoogle-ify.vercel.app">DeGoogle with privacy alternatives</div>
+                <div class="link" data-url="https://gayballs.vercel.app">Spell out words with gay balls</div>
+                <div class="link" data-url="https://butteryclicks.vercel.app">CPS test that won't crash</div>
+                <div class="link" data-url="https://guessthepassword.vercel.app">Password guessing game</div>
+            </div>
+        </div>
+    </div>
 
-            document.querySelectorAll(".link").forEach((el) => {
-                el.addEventListener("mouseenter", () => {
-                    hoverSound.currentTime = 0;
-                    hoverSound.play();
-                });
-            });
-        </script>
-    </body>
+    <footer onclick="window.open('https://www.youtube.com/watch?v=AuKR2fQbMBk','_blank')">This is such a good website</footer>
+
+    <script>
+        document.querySelectorAll(".link").forEach(el => el.addEventListener("click", () => window.open(el.dataset.url, "_blank")));
+        const btnSocials = document.getElementById("btnSocials");
+        const btnProjects = document.getElementById("btnProjects");
+        const socialsCategory = document.getElementById("categorySocials");
+        const projectsCategory = document.getElementById("categoryProjects");
+        const linksContainer = document.querySelector(".links");
+        let showSocials = false;
+        let showProjects = false;
+        function update() {
+            socialsCategory.style.display = showSocials ? "flex" : "none";
+            projectsCategory.style.display = showProjects ? "flex" : "none";
+            btnSocials.classList.toggle("active", showSocials);
+            btnProjects.classList.toggle("active", showProjects);
+            if (showSocials && showProjects) {
+                linksContainer.classList.add("two-active");
+                linksContainer.classList.remove("one-active");
+            } else if (showSocials || showProjects) {
+                linksContainer.classList.add("one-active");
+                linksContainer.classList.remove("two-active");
+            } else {
+                linksContainer.classList.remove("one-active", "two-active");
+            }
+        }
+        btnSocials.onclick = () => { showSocials = !showSocials; update(); };
+        btnProjects.onclick = () => { showProjects = !showProjects; update(); };
+        update();
+    </script>
+</body>
 </html>
