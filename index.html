@@ -16,65 +16,83 @@
     <meta name="twitter:url" content="https://igorlinks.vercel.app" />
     <meta name="twitter:site" content="@LoolyTunes" />
     <link rel="stylesheet" href="style.css" />
-    <title>Socials and projects</title>
+    <title>Socials & Projects</title>
 </head>
 <body>
-    <div class="buttons">
-        <button id="btnSocials" class="active">Socials</button>
-        <button id="btnProjects" class="active">Projects</button>
-    </div>
-
-    <div class="links">
-        <div class="category" id="categorySocials">
-            <h2>Socials</h2>
-            <div class="links-container">
-                <div class="link" data-url="https://x.com/LoolyTunes">Twitter/𝕏 profile</div>
-                <div class="link" data-url="https://github.com/Loolybooly">Github profile</div>
-                <div class="link" data-url="https://discord.com/users/1236215647310975016">Discord profile</div>
-                <div class="link" data-url="https://instagram.com/loolytunesperson">Instagram profile</div>
+    <div class="container">
+        <header><h1>Tunes</h1></header>
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="socials">Socials</button>
+            <button class="tab-btn" data-tab="projects">Projects</button>
+        </div>
+        
+        <div class="section active" id="socials">
+            <div class="links-grid">
+                <div class="link-card" data-url="https://x.com/LoolyTunes">
+                    <div class="link-icon">𝕏</div>
+                    <div class="link-text">Twitter/X profile</div>
+                </div>
+                <div class="link-card" data-url="https://github.com/Loolybooly">
+                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/github-light.png" alt="GitHub" class="link-icon-img">
+                    <div class="link-text">Github profile</div>
+                </div>
+                <div class="link-card" data-url="https://discord.com/users/1236215647310975016">
+                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/discord.png" alt="Discord" class="link-icon-img">
+                    <div class="link-text">Discord profile</div>
+                </div>
+                <div class="link-card" data-url="https://instagram.com/loolytunesperson">
+                    <img src="https://cdn.jsdelivr.net/gh/homarr-labs/dashboard-icons/png/instagram.png" alt="Instagram" class="link-icon-img">
+                    <div class="link-text">Instagram profile</div>
+                </div>
             </div>
         </div>
-
-        <div class="category" id="categoryProjects">
-            <h2>Projects</h2>
-            <div class="links-container">
-                <div class="link" data-url="https://degoogle-ify.vercel.app">DeGoogle with privacy alternatives</div>
-                <div class="link" data-url="https://gayballs.vercel.app">Spell out words with gay balls</div>
-                <div class="link" data-url="https://butteryclicks.vercel.app">CPS test that won't crash</div>
-                <div class="link" data-url="https://guessthepassword.vercel.app">Password guessing game</div>
+        
+        <div class="section" id="projects">
+            <div class="links-grid">
+                <div class="project-card" data-url="https://degoogle-ify.vercel.app">
+                    <div class="project-title">DeGoogle - Privacy Alternatives</div>
+                    <div class="project-description">Find privacy-focused alternatives to Google's services. Search, email, docs, and more without compromising your data.</div>
+                </div>
+                <div class="project-card" data-url="https://gayballs.vercel.app">
+                    <div class="project-title">Gay Balls Text Generator</div>
+                    <div class="project-description">Express yourself with colorful text made from rainbow balls. A fun and creative way to spell out words and messages.</div>
+                </div>
+                <div class="project-card" data-url="https://butteryclicks.vercel.app">
+                    <div class="project-title">Buttery Smooth CPS Test</div>
+                    <div class="project-description">Test your clicking speed with this ultra-smooth CPS counter. No crashes, just pure clicking performance testing.</div>
+                </div>
+                <div class="project-card" data-url="https://guessthepassword.vercel.app">
+                    <div class="project-title">Password Guessing Game</div>
+                    <div class="project-description">Challenge yourself with this addictive password guessing game. How quickly can you crack the code?</div>
+                </div>
             </div>
         </div>
-    </div>
-
-    <footer onclick="window.open('https://www.youtube.com/watch?v=AuKR2fQbMBk','_blank')">This is such a good website</footer>
-
+    
     <script>
-        document.querySelectorAll(".link").forEach(el => el.addEventListener("click", () => window.open(el.dataset.url, "_blank")));
-        const btnSocials = document.getElementById("btnSocials");
-        const btnProjects = document.getElementById("btnProjects");
-        const socialsCategory = document.getElementById("categorySocials");
-        const projectsCategory = document.getElementById("categoryProjects");
-        const linksContainer = document.querySelector(".links");
-        let showSocials = false;
-        let showProjects = false;
-        function update() {
-            socialsCategory.style.display = showSocials ? "flex" : "none";
-            projectsCategory.style.display = showProjects ? "flex" : "none";
-            btnSocials.classList.toggle("active", showSocials);
-            btnProjects.classList.toggle("active", showProjects);
-            if (showSocials && showProjects) {
-                linksContainer.classList.add("two-active");
-                linksContainer.classList.remove("one-active");
-            } else if (showSocials || showProjects) {
-                linksContainer.classList.add("one-active");
-                linksContainer.classList.remove("two-active");
-            } else {
-                linksContainer.classList.remove("one-active", "two-active");
-            }
-        }
-        btnSocials.onclick = () => { showSocials = !showSocials; update(); };
-        btnProjects.onclick = () => { showProjects = !showProjects; update(); };
-        update();
+        document.querySelectorAll(".link-card, .project-card").forEach(card => {
+            card.addEventListener("click", () => {
+                window.open(card.dataset.url, "_blank");
+            });
+        });
+        
+        const tabBtns = document.querySelectorAll(".tab-btn");
+        const sections = document.querySelectorAll(".section");
+        
+        tabBtns.forEach(btn => {
+            btn.addEventListener("click", () => {
+                const targetTab = btn.dataset.tab;
+                
+                tabBtns.forEach(b => b.classList.remove("active"));
+                btn.classList.add("active");
+                
+                sections.forEach(section => {
+                    section.classList.remove("active");
+                    if (section.id === targetTab) {
+                        section.classList.add("active");
+                    }
+                });
+            });
+        });
     </script>
 </body>
 </html>
