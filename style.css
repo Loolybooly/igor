@@ -296,6 +296,11 @@ body {
     color: #ffffff;
 }
 
+.projects-grid .project-card:nth-child(5) {
+    grid-column: span 2;
+    text-align: center;
+}
+
 footer {
     padding: 4rem 2rem;
     text-align: center;
