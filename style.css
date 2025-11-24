@@ -321,7 +321,7 @@ body {
     color: #ffffff;
 }
 
-.projects-grid .project-card:nth-child(5) {
+.projects-grid .project-card:last-child {
     grid-column: span 2;
     text-align: center;
 }
