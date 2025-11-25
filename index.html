@@ -37,7 +37,7 @@
                     Hello there! My social name is Tunes, you might not know me and thats fine,
                     but I strive to push for privacy and make privacy the default. I hope to do
                     amazing shit and replace G**gle. Beyond my developer life, I am just the above
-                    average Linux user that has 4 friends and is still in high school.
+                    average Linux user that has 4 friends and is still in high school. <span class="birthday-countdown" id="birthdayCountdown">Calculating time until you need to give me a birthday gift</span>
                 </h3>
             </div>
         </div>
@@ -130,6 +130,56 @@
                 window.open(card.dataset.url, '_blank');
             });
         });
+        function calculateBirthdayCountdown() {
+            const now = new Date();
+            let birthday = new Date(now.getFullYear(), 11, 26);
+
+            if (birthday <= now) {
+                birthday = new Date(now.getFullYear() + 1, 11, 26);
+            }
+
+            const timeLeft = birthday - now;
+
+            if (timeLeft < 86400000) {
+                return "December 26th";
+            }
+
+            const secondsLeft = Math.floor(timeLeft / 1000);
+            const minutesLeft = Math.floor(secondsLeft / 60);
+            const hoursLeft = Math.floor(minutesLeft / 60);
+            const daysLeft = Math.floor(hoursLeft / 24);
+            const weeksLeft = (daysLeft / 7);
+            const monthsLeft = (daysLeft / 30.4167);
+
+            function formatDecimal(num) {
+                const rounded = Math.round(num * 10) / 10;
+                const str = rounded.toString();
+                if (str.endsWith('.0')) {
+                    return str.slice(0, -2);
+                }
+                return rounded.toFixed(1);
+            }
+
+            return `My birthday is in: ${formatDecimal(monthsLeft)} months, or ${formatDecimal(weeksLeft)} weeks, or ${daysLeft} days, or ${hoursLeft} hours, or ${minutesLeft} minutes, or ${secondsLeft} seconds. Or just December 26th. You should get ready to give me a birthday gift (: maybe like PC parts or steam wallet money (not asking just hinting hehe)`;
+        }
+
+        function updateCountdown() {
+            const countdownElement = document.getElementById('birthdayCountdown');
+            if (countdownElement) {
+                countdownElement.textContent = calculateBirthdayCountdown();
+            }
+        }
+
+        function initializeCountdown() {
+            const countdownElement = document.getElementById('birthdayCountdown');
+            if (countdownElement) {
+                countdownElement.textContent = 'Calculating birthday countdown...';
+            }
+            setTimeout(updateCountdown, 100);
+            setInterval(updateCountdown, 1000);
+        }
+
+        initializeCountdown();
     </script>
 </body>
 </html>

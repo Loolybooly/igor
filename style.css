@@ -118,6 +118,88 @@ body {
     display: block;
 }
 
+.birthday-countdown {
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.countdown-display {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 16px;
+    padding: 1.5rem;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.countdown-display:hover {
+    background: rgba(255, 255, 255, 0.15);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.countdown-text {
+    color: #0a0a0a;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    font-weight: 500;
+    text-align: left;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.countdown-loading {
+    color: #666;
+    font-style: italic;
+    font-size: 0.95rem;
+    animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 0.5;
+    }
+    50% {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    .birthday-countdown {
+        margin-top: 1.5rem;
+    }
+
+    .countdown-display {
+        padding: 1rem;
+    }
+
+    .countdown-text {
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+}
+
+@media (max-width: 480px) {
+    .countdown-display {
+        padding: 0.75rem;
+    }
+
+    .countdown-text {
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+}
+
 .complaint-container {
     background: #999;
     padding: 1rem;
