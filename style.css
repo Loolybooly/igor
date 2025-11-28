@@ -403,7 +403,7 @@ body {
     color: #ffffff;
 }
 
-.projects-grid .project-card:last-child {
+.projects-grid .project-card.wide-last-card {
     grid-column: span 2;
     text-align: center;
 }
