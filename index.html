@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- discord embed -->
-    <meta property="og:title" content="Igor links" />
-    <meta property="og:description" content="Links from Igor" />
+    <meta property="og:title" content="Tunes - Developer & Creator Portfolio" />
+    <meta property="og:description" content="Tunes - Developer & Creator Portfolio" />
     <meta property="og:image" content="https://i.imgur.com/aW3RsNm.png" />
     <meta property="og:url" content="https://tunes.is-a.dev" />
     <meta property="og:type" content="website" />
@@ -13,8 +13,8 @@
 
     <!-- twitter (NOT X) embed u STUPID elon -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Igor links" />
-    <meta name="twitter:description" content="Links from Igor" />
+    <meta name="twitter:title" content="Tunes - Developer & Creator Portfolio" />
+    <meta name="twitter:description" content="Tunes - Developer & Creator Portfolio" />
     <meta name="twitter:image" content="https://i.imgur.com/aW3RsNm.png" />
     <meta name="twitter:url" content="https://tunes.is-a.dev" />
     <meta name="twitter:site" content="@LoolyTunes" />
@@ -37,15 +37,15 @@
                     Hello there! My social name is Tunes, you might not know me and thats fine,
                     but I strive to push for privacy and make privacy the default. I hope to do
                     amazing shit and replace G**gle. Beyond my developer life, I am just the above
-                    average Linux user that has 4 friends and is still in high school. <span class="birthday-countdown" id="birthdayCountdown">Time until you need to give me a birthday gift</span>
+                    average Linux user that has 4 friends and is still in high school. <span class="birthday-countdown" id="birthdayCountdown">Time until you need to give me a birthday gift</span>. Currently <span id="presenceActivity">acknowledge my presence, discord.</span>
                 </h3>
             </div>
         </div>
     </section>
 
-    <div class="complaint-container">
-        <h6 class="complaint">Please help the only thing keeping my G**gle account alive is school forcing me to use classroom</h6>
-    </div>
+<div class="complaint-container">
+    <h6 class="complaint">Please help the only thing keeping my G**gle account alive is school forcing me to use classroom</h6>
+</div>
 
     <section class="content-section dark" id="socials">
         <div class="container">
@@ -63,7 +63,7 @@
                     <div class="social-username">@Loolybooly</div>
                 </div>
                 <div class="social-card" data-url="https://discord.com/users/1236215647310975016">
-                    <img src="https://cdn.simpleicons.org/discord" alt="Discord" class="social-icon">
+                    <img src="https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/66e3d8014ea898f3a4b2156c_Symbol.svg" alt="Discord social platform" class="social-icon">
                     <div class="social-text">Discord</div>
                     <div class="social-username">@mynameisloolybruh</div>
                 </div>
@@ -125,10 +125,56 @@
         </div>
     </section>
 
+    <section class="content-section dark" id="pc-specs">
+        <div class="container">
+            <div class="section-label">— My setup</div>
+            <h2 class="section-title">PC Specs</h2>
+            <div class="specs-grid">
+                <div class="spec-card">
+                    <div class="spec-title">Keyboard</div>
+                    <p class="spec-value">SbocKeeb V500</p>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-title">Mouse</div>
+                    <p class="spec-value">Rapoo 7200m silent</p>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-title">Speakers</div>
+                    <p class="spec-value">BS-28B</p>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-title">Monitor</div>
+                    <p class="spec-value">PhilIps 165Hz IPS Momentum 3200 27"</p>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-title">GPU</div>
+                    <p class="spec-value">RTX 4060</p>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-title">CPU</div>
+                    <p class="spec-value">Intel i7-14700f</p>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-title">Storage</div>
+                    <p class="spec-value">1TB NVMe SSD</p>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-title">RAM</div>
+                    <p class="spec-value">32GB DDR5 2800MHz</p>
+                </div>
+                <div class="spec-card">
+                    <div class="spec-title">OS</div>
+                    <p class="spec-value">Arch Linux</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer>
         <p>Made with 🫀 by Tunes</p>
     </footer>
 
+    <script src="main.js"></script>
     <script>
         document.querySelectorAll('.social-card, .project-card').forEach(card => {
             card.addEventListener('click', () => {
@@ -147,6 +193,7 @@
                 }
             }
         }
+
         function calculateBirthdayCountdown() {
             const now = new Date();
             let birthday = new Date(now.getFullYear(), 11, 26);
