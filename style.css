@@ -53,6 +53,10 @@ body {
     color: #ffffff;
 }
 
+.content-section#projects .about-content h3 {
+    color: #ddd;
+}
+
 .content-section#projects .project-card {
     color: #0a0a0a;
 }
